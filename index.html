@@ -5,189 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
   <title>tantam.jpeg — Thania Sukendy</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,600&family=Homemade+Apple&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --ink: #6b5744;
+      --cream: #faf1e6;
+      --card: #fdf6ec;
+      --blush: #f3c9d6;
+      --mint: #dcefe1;
+      --butter: #f6de9b;
+      --sky: #c9e3ff;
+    }
+
     html, body {
       width: 100%;
       min-height: 100vh;
-      background: #fbf7ee;
-      color: #3a352e;
-      font-family: 'Cormorant Garamond', serif;
+      background-color: var(--cream);
+      background-image: radial-gradient(var(--blush) 1.5px, transparent 1.8px);
+      background-size: 22px 22px;
+      color: var(--ink);
+      font-family: 'Nunito', sans-serif;
       overflow-x: hidden;
-    }
-
-    /* soft paper grain */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1.4px);
-      background-size: 9px 9px;
-      pointer-events: none;
-      z-index: 0;
     }
 
     body {
       position: relative;
-      padding: 70px 16px 90px 16px;
+      padding: 40px 16px 80px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* ---------------- SOFT WATERCOLOR BLOBS behind the doodles ---------------- */
-    .wash {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(14px);
-      opacity: 0.55;
-      z-index: 0;
-    }
+    /* ---------------- SOFT BOW ACCENTS (replaces washi tape) ---------------- */
+    .bow-accent { position: absolute; z-index: 4; opacity: 0.95; }
 
-    /* ---------------- ORIGINAL LINE-ART DOODLES ---------------- */
-    .doodle {
-      position: absolute;
-      z-index: 1;
-      opacity: 0.92;
+    /* ---------------- NAV ---------------- */
+    .nav-twee {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
     }
+    .nav-twee a {
+      font-family: 'Gaegu', cursive;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      background: var(--card);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      padding: 6px 16px;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .nav-twee a:nth-child(1) { background: var(--blush); }
+    .nav-twee a:nth-child(2) { background: var(--mint); }
+    .nav-twee a:nth-child(3) { background: var(--butter); }
+    .nav-twee a:nth-child(4) { background: var(--sky); }
+    .nav-twee a:nth-child(5) { background: var(--blush); }
+    .nav-twee a:nth-child(6) { background: var(--mint); }
+    .nav-twee a:hover { transform: translateY(-2px); }
 
-    /* ---------------- MAIN STAGE ---------------- */
-    .stage {
+    /* ---------------- SCALLOPED CARD ---------------- */
+    .scallop-card {
       position: relative;
       z-index: 2;
       width: 100%;
       max-width: 600px;
-      text-align: center;
+      background: var(--card);
+      border: 2.5px solid var(--ink);
+      border-radius: 30px;
+      padding: 50px 30px 40px 30px;
+      box-shadow: 0 8px 0 rgba(107, 87, 68, 0.12);
+    }
+    .scallop-edge {
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      right: 20px;
+      height: 26px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .scallop-edge span {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 2.5px solid var(--ink);
     }
 
     .h-welcome {
       display: block;
-      font-family: 'Homemade Apple', cursive;
-      font-size: 1.3rem;
-      color: #b98a9a;
-      margin-bottom: 4px;
-      transform: rotate(-2deg);
+      text-align: center;
+      font-family: 'Gaegu', cursive;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: #b3546b;
+      margin-bottom: 2px;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-weight: 600;
-      font-size: clamp(2.6rem, 9vw, 4rem);
-      color: #2f2a22;
-      margin-bottom: 10px;
-      line-height: 1.05;
+      display: block;
+      text-align: center;
+      font-family: 'Gaegu', cursive;
+      font-weight: 700;
+      font-size: clamp(2.4rem, 9vw, 3.4rem);
+      color: var(--ink);
+      margin-bottom: 12px;
     }
 
     .tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 500;
-      font-size: clamp(1.1rem, 3vw, 1.35rem);
-      font-style: italic;
-      color: #5a5346;
-      line-height: 1.55;
-      max-width: 420px;
-      margin: 0 auto 40px auto;
+      display: block;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #7a6a58;
+      max-width: 380px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    /* ---------------- NAV ---------------- */
-    .nav-vintage {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 22px;
-      margin-bottom: 8px;
-    }
-    .nav-vintage a {
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      font-size: 1rem;
-      color: #3a352e;
-      text-decoration: none;
-      padding-bottom: 4px;
-      border-bottom: 1px solid rgba(58, 53, 46, 0.35);
-      transition: border-color 0.2s ease, color 0.2s ease;
-    }
-    .nav-vintage a:hover { color: #b3546b; border-color: #b3546b; }
+    /* ---------------- SCATTERED PRECIOUS MOTIFS ---------------- */
+    .motif { position: absolute; z-index: 1; }
 
     @media (max-width: 480px) {
-      .doodle { transform: scale(0.65); }
-      .nav-vintage { gap: 14px; }
-      .nav-vintage a { font-size: 0.9rem; }
+      .motif, .bow-accent { transform: scale(0.7); }
+      .scallop-card { padding: 44px 18px 30px 18px; }
+      .nav-twee a { font-size: 0.95rem; padding: 5px 13px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- soft watercolor washes -->
-  <div class="wash" style="top:2%; left:4%; width:130px; height:110px; background:#cfe0c2;"></div>
-  <div class="wash" style="top:6%; right:6%; width:110px; height:130px; background:#f0c9d6;"></div>
-  <div class="wash" style="bottom:10%; left:8%; width:120px; height:100px; background:#e8d9b8;"></div>
-  <div class="wash" style="bottom:6%; right:10%; width:140px; height:120px; background:#c9dce0;"></div>
-  <div class="wash" style="top:42%; left:1%; width:90px; height:90px; background:#f0c9d6;"></div>
-  <div class="wash" style="top:46%; right:2%; width:100px; height:90px; background:#cfe0c2;"></div>
-
-  <!-- original delicate line-art doodles, inspired by a vintage/cottagecore vibe -->
-
-  <!-- teacup + saucer -->
-  <svg class="doodle" style="top:5%; left:6%; width:78px;" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="46" cy="72" rx="40" ry="9" stroke="#4a3f33" stroke-width="1.3"/>
-    <path d="M18 40 Q18 68 46 68 Q74 68 74 40 Z" stroke="#4a3f33" stroke-width="1.3"/>
-    <path d="M18 40 Q46 48 74 40" stroke="#4a3f33" stroke-width="1.1"/>
-    <path d="M74 46 Q92 44 90 58 Q88 70 72 64" stroke="#4a3f33" stroke-width="1.2"/>
-    <path d="M14 30 Q18 22 14 14 M24 30 Q28 22 24 14" stroke="#4a3f33" stroke-width="1" stroke-linecap="round"/>
+  <!-- soft bow accents in the corners -->
+  <svg class="bow-accent" style="top: 18px; left: 6%; width: 54px;" viewBox="0 0 60 40">
+    <path d="M30 20 C22 8 6 10 6 20 C6 30 22 28 30 20 C38 28 54 30 54 20 C54 10 38 8 30 20 Z" fill="#f3c9d6" stroke="#6b5744" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="30" cy="20" r="5" fill="#f3c9d6" stroke="#6b5744" stroke-width="2"/>
+  </svg>
+  <svg class="bow-accent" style="top: 22px; right: 6%; width: 46px;" viewBox="0 0 60 40">
+    <path d="M30 20 C22 8 6 10 6 20 C6 30 22 28 30 20 C38 28 54 30 54 20 C54 10 38 8 30 20 Z" fill="#c9e3ff" stroke="#6b5744" stroke-width="2" stroke-linejoin="round"/>
+    <circle cx="30" cy="20" r="5" fill="#c9e3ff" stroke="#6b5744" stroke-width="2"/>
   </svg>
 
-  <!-- ornate hand mirror -->
-  <svg class="doodle" style="top:8%; right:8%; width:70px; transform: rotate(6deg);" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="45" cy="45" rx="34" ry="40" stroke="#4a3f33" stroke-width="1.3"/>
-    <ellipse cx="45" cy="45" rx="26" ry="32" stroke="#4a3f33" stroke-width="0.9"/>
-    <path d="M45 85 L45 122" stroke="#4a3f33" stroke-width="2" stroke-linecap="round"/>
-    <path d="M36 92 Q45 100 54 92" stroke="#4a3f33" stroke-width="1"/>
+  <!-- tiny precious motifs: mushroom, bird+teacup, flowers -->
+  <svg class="motif" style="top: 12%; left: 3%; width: 60px;" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="46" rx="34" ry="24" fill="#f3c9d6" stroke="#6b5744" stroke-width="2"/>
+    <circle cx="38" cy="40" r="4" fill="#faf1e6" stroke="#6b5744" stroke-width="1.2"/>
+    <circle cx="58" cy="36" r="3.5" fill="#faf1e6" stroke="#6b5744" stroke-width="1.2"/>
+    <circle cx="50" cy="52" r="3.5" fill="#faf1e6" stroke="#6b5744" stroke-width="1.2"/>
+    <rect x="38" y="60" width="24" height="30" rx="10" fill="#fdf6ec" stroke="#6b5744" stroke-width="2"/>
   </svg>
 
-  <!-- small vanity chair -->
-  <svg class="doodle" style="top:26%; left:2%; width:64px; transform: rotate(-4deg);" viewBox="0 0 90 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22 20 Q45 4 68 20 L64 56 Q45 64 26 56 Z" stroke="#4a3f33" stroke-width="1.2"/>
-    <path d="M30 56 L26 118 M60 56 L64 118" stroke="#4a3f33" stroke-width="1.1"/>
-    <path d="M26 90 H64" stroke="#4a3f33" stroke-width="1"/>
+  <svg class="motif" style="top: 10%; right: 4%; width: 64px;" viewBox="0 0 110 100">
+    <path d="M20 70 Q20 45 55 45 Q90 45 90 70 L90 78 Q90 88 55 88 Q20 88 20 78 Z" fill="#fdf6ec" stroke="#6b5744" stroke-width="2"/>
+    <ellipse cx="55" cy="90" rx="42" ry="7" fill="none" stroke="#6b5744" stroke-width="1.5"/>
+    <circle cx="48" cy="30" r="16" fill="#f6de9b" stroke="#6b5744" stroke-width="2"/>
+    <circle cx="43" cy="27" r="1.8" fill="#6b5744"/>
+    <circle cx="55" cy="27" r="1.8" fill="#6b5744"/>
+    <circle cx="38" cy="32" r="3" fill="#f3c9d6"/>
+    <circle cx="60" cy="32" r="3" fill="#f3c9d6"/>
   </svg>
 
-  <!-- decorative spoon -->
-  <svg class="doodle" style="top:34%; right:4%; width:36px; transform: rotate(18deg);" viewBox="0 0 40 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="20" cy="22" rx="15" ry="20" stroke="#4a3f33" stroke-width="1.2"/>
-    <path d="M20 42 L20 130" stroke="#4a3f33" stroke-width="1.4" stroke-linecap="round"/>
-    <text x="20" y="118" font-size="9" text-anchor="middle" font-family="'Homemade Apple', cursive" fill="#4a3f33">love</text>
-  </svg>
+  <svg class="motif" style="bottom: 14%; left: 5%; width: 30px;" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" fill="#f6de9b" stroke="#6b5744" stroke-width="2"/><circle cx="20" cy="20" r="6" fill="#f3c9d6"/></svg>
+  <svg class="motif" style="bottom: 10%; right: 8%; width: 26px;" viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#c9e3ff" stroke="#6b5744" stroke-width="2"/><circle cx="20" cy="20" r="5" fill="#f6de9b"/></svg>
+  <svg class="motif" style="top: 44%; left: 2%; width: 24px;" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="#dcefe1" stroke="#6b5744" stroke-width="2"/><circle cx="20" cy="20" r="4.5" fill="#f3c9d6"/></svg>
 
-  <!-- little sofa -->
-  <svg class="doodle" style="bottom:8%; left:5%; width:120px;" viewBox="0 0 160 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 60 Q10 30 40 30 L120 30 Q150 30 150 60 L150 84 L10 84 Z" stroke="#4a3f33" stroke-width="1.3"/>
-    <path d="M40 30 L40 84 M80 30 L80 84 M120 30 L120 84" stroke="#4a3f33" stroke-width="1"/>
-    <path d="M10 60 Q0 60 0 74 Q0 88 14 84 M150 60 Q160 60 160 74 Q160 88 146 84" stroke="#4a3f33" stroke-width="1"/>
-  </svg>
+  <nav class="nav-twee">
+    <a href="index.html">home</a>
+    <a href="about.html">about me</a>
+    <a href="artworks.html">arts</a>
+    <a href="writing.html">writings</a>
+    <a href="socials.html">socials</a>
+    <a href="guestbook.html">guestbook</a>
+  </nav>
 
-  <!-- scattered stars -->
-  <svg class="doodle" style="top:14%; left:38%; width:22px;" viewBox="0 0 24 24"><path d="M12 1 L14.5 9 L23 9 L16 14.5 L18.5 23 L12 17.5 L5.5 23 L8 14.5 L1 9 L9.5 9 Z" fill="#e8c25c"/></svg>
-  <svg class="doodle" style="top:48%; left:22%; width:16px;" viewBox="0 0 24 24"><path d="M12 1 L14.5 9 L23 9 L16 14.5 L18.5 23 L12 17.5 L5.5 23 L8 14.5 L1 9 L9.5 9 Z" fill="#e8c25c"/></svg>
-  <svg class="doodle" style="top:58%; right:24%; width:20px;" viewBox="0 0 24 24"><path d="M12 1 L14.5 9 L23 9 L16 14.5 L18.5 23 L12 17.5 L5.5 23 L8 14.5 L1 9 L9.5 9 Z" fill="#e8c25c"/></svg>
-  <svg class="doodle" style="bottom:22%; right:6%; width:18px;" viewBox="0 0 24 24"><path d="M12 1 L14.5 9 L23 9 L16 14.5 L18.5 23 L12 17.5 L5.5 23 L8 14.5 L1 9 L9.5 9 Z" fill="#e8c25c"/></svg>
+  <div class="scallop-card">
+    <div class="scallop-edge">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-  <div class="stage">
     <span class="h-welcome">welcome to</span>
-    <div class="logo">tantam.jpeg</div>
-    <p class="tagline">a little dreamscape of art, words, and quiet things I love ✧</p>
-
-    <nav class="nav-vintage">
-      <a href="about.html">about me</a>
-      <a href="artworks.html">arts</a>
-      <a href="writing.html">writings</a>
-      <a href="socials.html">socials</a>
-      <a href="guestbook.html">guestbook</a>
-    </nav>
+    <span class="logo">tantam.jpeg</span>
+    <span class="tagline">a soft little corner of the internet, full of small treasures ✧</span>
   </div>
 
 </body>
