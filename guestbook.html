@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guestbook — tantam.jpeg</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+<div class="page">
+
+  <div class="top-row">
+    <div class="circled-heading" style="margin-bottom:0;">
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+        <path d="M4,22 C3,7 22,2 50,2 C80,2 97,8 96,20 C98,34 78,38 50,38 C22,39 5,36 4,22 Z"
+          fill="none" stroke="#E486AE" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <h1>GUESTBOOK</h1>
+    </div>
+    <nav class="nav">
+      <a class="pill" href="index.html">HOME</a>
+      <a class="pill" href="arts.html">ARTS</a>
+      <a class="pill" href="writings.html">WRITINGS</a>
+      <a class="pill" href="about.html">ABOUT ME</a>
+    </nav>
+  </div>
+
+  <svg class="doodle" style="top:16%; left:3%; width:60px; opacity:.6;" viewBox="0 0 100 100" fill="none">
+    <path d="M50 8c4 14-2 22 10 26 14 4 18-8 26 2-10 6-8 16 2 22-14 6-18-4-24 6-4-14 4-20-8-26-12-6-18 4-26-4 10-6 8-16-2-22 12-4 18 2 22-4z" stroke="#C9A8E0" stroke-width="3" stroke-linejoin="round"/>
+  </svg>
+
+  <p style="max-width:520px; font-family:var(--font-body); color:var(--cream); opacity:.75; font-size:1.05rem; margin: 6px 0 34px;">
+    sign my guestbook! say hi, leave a doodle in words, tell me your favorite color — anything goes.
+  </p>
+
+  <div class="guest-list">
+
+    <div class="guest-note">
+      <span class="from">— mika</span>
+      <span class="when">2 days ago</span>
+      <p>found your site through a friend's site through a friend's site... the internet is small and lovely. love the art!!</p>
+    </div>
+
+    <div class="guest-note">
+      <span class="from">— jonas</span>
+      <span class="when">1 week ago</span>
+      <p>the house-head girl piece has been living in my brain rent free, incredible work 🏠</p>
+    </div>
+
+    <div class="guest-note">
+      <span class="from">— renn</span>
+      <span class="when">2 weeks ago</span>
+      <p>hiii signing this out of nostalgia for old internet guestbooks. yours is so cute!</p>
+    </div>
+
+    <div class="guest-note">
+      <span class="from">— pip</span>
+      <span class="when">3 weeks ago</span>
+      <p>your writing about the train thoughts made me miss my old commute, weirdly. more please</p>
+    </div>
+
+  </div>
+
+  <form class="guest-form" onsubmit="return false;">
+    <label for="gb-name">your name</label>
+    <input id="gb-name" type="text" name="name" placeholder="e.g. a friendly stranger" required>
+
+    <label for="gb-message">your message</label>
+    <textarea id="gb-message" name="message" rows="4" placeholder="leave something nice (or weird, weird is good too)" required></textarea>
+
+    <button type="submit">Sign the Guestbook</button>
+    <div class="hint">✧ this form is just for show right now — hook it up to a backend or a form service to actually collect entries.</div>
+  </form>
+
+  <div class="foot-note">thank you for signing ✧ be kind, be weird</div>
+
+</div>
+</body>
+</html>
